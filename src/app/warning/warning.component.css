@@ -1,0 +1,8 @@
+.warning {
+  background-color: rgba(239, 68, 68, 1);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  width: 20rem;
+  text-align: center;
+}

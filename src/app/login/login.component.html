@@ -1,0 +1,8 @@
+<label>Username</label>
+<input type="text" [(ngModel)]="username">
+<button [disabled]="username === ''" (click)="resetUsername()">reset</button>
+<p>{{username}}</p>
+<app-warning *ngIf="username === ''; else success"></app-warning>
+<ng-template #success>
+  <app-success></app-success>
+</ng-template>
