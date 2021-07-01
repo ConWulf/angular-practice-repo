@@ -1,0 +1,4 @@
+<p class="text-blue-200" *ngIf="number != undefined && number % 2 == 0; else odd">{{number}} is even</p>
+<ng-template #odd>
+  <p class="text-green-200" >{{number}} is odd</p>
+</ng-template>

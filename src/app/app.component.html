@@ -1,7 +1,20 @@
-<input type="text" [(ngModel)]="name">
-<p>{{name}}</p>
-<div class="content">
-  <span>hello {{title}}</span>
+<!--<input type="text" [(ngModel)]="name">-->
+<!--<p>{{name}}</p>-->
+<!--<div class="content">-->
+<!--  <span>hello {{title}}</span>-->
+<!--</div>-->
+<!--<app-servers></app-servers>-->
+<!--<app-login></app-login>-->
+<div class="bg-gray-900">
+  <div class="w-full h-screen">
+    <div class="flex flex-col items-center justify-start h-screen overflow-auto">
+      <app-game-control (onStart)="oddEven($event)" class="m-auto my-0 flex flex-col gap-6">
+      </app-game-control>
+      <div class="flex space-x-2 flex-wrap">
+<!--        <app-odd class="text-blue-200" *ngFor="let num of filterOdds()" [number]="num"></app-odd>-->
+<!--        <app-even class="text-green-200"  *ngFor="let num of filterEvens()" [number]="num"></app-even>-->
+        <app-number *ngFor="let num of numArray" [number]="num"></app-number>
+      </div>
+    </div>
+  </div>
 </div>
-<app-servers></app-servers>
-<app-login></app-login>
