@@ -11,6 +11,11 @@ import { GameControlComponent } from './game-control/game-control.component';
 import { OddComponent } from './game-control/odd/odd.component';
 import { EvenComponent } from './game-control/even/even.component';
 import { NumberComponent } from './game-control/number/number.component';
+import { BasicHighlightDirective } from './directives/basic-highlight.directive';
+import { BetterUseHighlightDirective } from './directives/better-use-highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
+import {AccountComponent} from "./account/account.component";
+import {NewAccountComponent} from "./new-account/new-account.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { NumberComponent } from './game-control/number/number.component';
     GameControlComponent,
     OddComponent,
     EvenComponent,
-    NumberComponent
+    NumberComponent,
+    BasicHighlightDirective,
+    BetterUseHighlightDirective,
+    UnlessDirective,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,

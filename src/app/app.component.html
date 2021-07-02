@@ -5,16 +5,29 @@
 <!--</div>-->
 <!--<app-servers></app-servers>-->
 <!--<app-login></app-login>-->
-<div class="bg-gray-900">
-  <div class="w-full h-screen">
-    <div class="flex flex-col items-center justify-start h-screen overflow-auto">
-      <app-game-control (onStart)="oddEven($event)" class="m-auto my-0 flex flex-col gap-6">
-      </app-game-control>
-      <div class="flex space-x-2 flex-wrap">
-<!--        <app-odd class="text-blue-200" *ngFor="let num of filterOdds()" [number]="num"></app-odd>-->
-<!--        <app-even class="text-green-200"  *ngFor="let num of filterEvens()" [number]="num"></app-even>-->
-        <app-number *ngFor="let num of numArray" [number]="num"></app-number>
-      </div>
+<!--<div class="bg-gray-900">-->
+<!--  <div class="w-full h-screen">-->
+<!--    <div class="flex flex-col items-center justify-start h-screen overflow-auto">-->
+<!--      <app-game-control (onStart)="oddEven($event)" class="m-auto my-0 flex flex-col gap-6">-->
+<!--      </app-game-control>-->
+<!--      <div class="flex space-x-2 flex-wrap" [appBetterUseHighlight]="'#11aa99'" [defaultColor]="'#1199aa'">-->
+<!--&lt;!&ndash;        <app-odd class="text-blue-200" *ngFor="let num of filterOdds()" [number]="num"></app-odd>&ndash;&gt;-->
+<!--&lt;!&ndash;        <app-even class="text-green-200"  *ngFor="let num of filterEvens()" [number]="num"></app-even>&ndash;&gt;-->
+<!--        <app-number *ngFor="let num of numArray" [number]="num"></app-number>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>
+      <hr>
+      <app-account
+        *ngFor="let acc of accounts; let i = index"
+        [account]="acc"
+        [id]="i"
+        (statusChanged)="onStatusChanged($event)"></app-account>
     </div>
   </div>
 </div>
