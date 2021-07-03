@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AccountService} from "./services/account.service";
+import {UserService} from "./services/user.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  // providers: [AccountService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'first-angular-project';
   name = 'connor';
   // numArray : number[] = [];
@@ -22,28 +25,29 @@ export class AppComponent {
   //   return this.numArray.filter(num => num % 2 != 0)
   // }
 
-  accounts = [
-    {
-      name: 'Master Account',
-      status: 'active'
-    },
-    {
-      name: 'Testaccount',
-      status: 'inactive'
-    },
-    {
-      name: 'Hidden Account',
-      status: 'unknown'
-    }
-  ];
+  // accounts : {name : string, status : string}[] = [];
+  // activeUsers = ['Max', 'Anna'];
+  // inactiveUsers = ['Chris', 'Manu'];
 
-  onAccountAdded(newAccount: {name: string, status: string}) {
-    this.accounts.push(newAccount);
+  // onSetToInactive(id: number) {
+  //   this.inactiveUsers.push(this.activeUsers[id]);
+  //   this.activeUsers.splice(id, 1);
+  // }
+
+  // onSetToActive(id: number) {
+  //   this.activeUsers.push(this.inactiveUsers[id]);
+  //   this.inactiveUsers.splice(id, 1);
+  // }
+  activeUsers : string[] = [];
+  inactiveUsers : string[] = [];
+  constructor(private accountService: AccountService, private userService: UserService) {
   }
 
-  onStatusChanged(updateInfo: {id?: number, newStatus: string}) : void {
-    if(updateInfo.id !== undefined)
-      this.accounts[updateInfo.id].status = updateInfo.newStatus;
+  ngOnInit() {
+    this.activeUsers = this.userService.activeUsers;
+    this.inactiveUsers = this.userService.inactiveUsers;
+    // this.accounts = this.accountService.accounts;
   }
+
 
 }
