@@ -7,16 +7,20 @@ export class UserService {
   activeUsers : string[] = ['Max', 'Anna'];
   inactiveUsers : string[] = ['Chris', 'Manu'];
 
-  setToInactive(id : number) {
+  public setToInactive(id : number) {
     this.inactiveUsers.push(this.activeUsers[id]);
     this.activeUsers.splice(id, 1);
   }
 
-  setToActive(id : number) {
+  public setToActive(id : number) {
     this.activeUsers.push(this.inactiveUsers[id]);
     this.inactiveUsers.splice(id, 1);
   }
 
 
   constructor() { }
+
+  static setToInactive(id: number) {
+
+  }
 }
